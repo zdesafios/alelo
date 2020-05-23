@@ -1,0 +1,26 @@
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: postgres
+    dbcp2:
+      test-while-idle: true
+      validation-query: SELECT 1
+    url: jdbc:postgresql://localhost:5432/alelodb
+    
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: true
+    
+  cache:
+    type: redis
+    host: localhost
+    port: 6379
